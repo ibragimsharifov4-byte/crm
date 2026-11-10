@@ -1,12 +1,12 @@
+using Application.DTOs.StudentGroupDtos;
 using Application.Responses;
-using Domain.Models;
 
 namespace Application.Interfaces;
 
 public interface IStudentGroupService
 {
-    Task<ApiResponse<List<StudentGroup>>> GetStudentGroups();
-    Task<ApiResponse<bool>> AddStudentGroup(StudentGroup studentGroup);
-    Task<ApiResponse<bool>> UpdateStudentGroup(StudentGroup studentGroup);
+    Task<ApiResponse<List<StudentGroupDto>>> GetStudentGroups();
+    Task<ApiResponse<bool>> AddStudentGroup(CreateStudentGroupDto studentGroupDto);
+    Task<ApiResponse<bool>> UpdateStudentGroup(UpdateStudentGroupDto studentGroupDto);
     Task<ApiResponse<bool>> DeleteStudentGroup(int id);
 }

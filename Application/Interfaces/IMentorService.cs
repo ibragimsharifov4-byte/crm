@@ -1,13 +1,14 @@
+using Application.DTOs.MentorByIdDtos;
+using Application.DTOs.MentorDtos;
 using Application.Responses;
-using Domain.Models;
 
 namespace Application.Interfaces;
 
 public interface IMentorService
 {
-    Task<ApiResponse<List<Mentor>>> GetMentors();
-    Task<ApiResponse<Mentor?>> GetMentor(int id);
-    Task<ApiResponse<bool>> AddMentor(Mentor mentor);
-    Task<ApiResponse<bool>> UpdateMentor(int id, Mentor mentor);
+    Task<ApiResponse<List<MentorDto>>> GetMentors();
+    Task<ApiResponse<MentorByIdDto?>> GetMentor(int id);
+    Task<ApiResponse<bool>> AddMentor(CreateMentorDto mentorDto);
+    Task<ApiResponse<bool>> UpdateMentor(int id, UpdateMentorDto mentorDto);
     Task<ApiResponse<bool>> DeleteMentor(int id);
 }

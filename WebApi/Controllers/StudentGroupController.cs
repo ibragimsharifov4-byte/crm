@@ -1,6 +1,6 @@
+using Application.DTOs.StudentGroupDtos;
 using Application.Interfaces;
 using Application.Responses;
-using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
@@ -12,13 +12,13 @@ public class StudentGroupController(IStudentGroupService studentGroupService) : 
     private readonly IStudentGroupService _service = studentGroupService;
 
     [HttpGet]
-    public async Task<ApiResponse<List<StudentGroup>>> GetStudentGroups() => await _service.GetStudentGroups();
+    public async Task<ApiResponse<List<StudentGroupDto>>> GetStudentGroups() => await _service.GetStudentGroups();
 
     [HttpPost]
-    public async Task<ApiResponse<bool>> AddStudentGroup(StudentGroup studentGroup) => await _service.AddStudentGroup(studentGroup);
+    public async Task<ApiResponse<bool>> AddStudentGroup(CreateStudentGroupDto studentGroupDto) => await _service.AddStudentGroup(studentGroupDto);
 
     [HttpPut]
-    public async Task<ApiResponse<bool>> UpdateStudentGroup(StudentGroup studentGroup) => await _service.UpdateStudentGroup(studentGroup);
+    public async Task<ApiResponse<bool>> UpdateStudentGroup(UpdateStudentGroupDto studentGroupDto) => await _service.UpdateStudentGroup(studentGroupDto);
 
     [HttpDelete("{id:int}")]
     public async Task<ApiResponse<bool>> DeleteStudentGroup(int id) => await _service.DeleteStudentGroup(id);

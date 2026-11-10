@@ -1,4 +1,6 @@
 using System.Net;
+using Application.DTOs.GroupByIdDtos;
+using Application.DTOs.GroupDtos;
 using Application.Interfaces;
 using Application.Responses;
 using Domain.Interfaces;
@@ -10,25 +12,68 @@ public class GroupService(IGroupRepository groupRepository) : IGroupService
 {
     private readonly IGroupRepository _repository = groupRepository;
 
-    public async Task<ApiResponse<List<Group>>> GetGroups()
+    public async Task<ApiResponse<List<GroupDto>>> GetGroups()
     {
         var result = await _repository.GetGroups();
-        return new ApiResponse<List<Group>>(HttpStatusCode.OK, "Groups retrieved successfully", result);
+
+        var groupsDto = new List<GroupDto>();
+
+        foreach (var g in result)
+        {
+            var groupDto = new GroupDto
+            {
+                Id = g.GroupId,
+                GroupName = g.GroupName,
+                CourseId = g.CourseId,
+                MentorId = g.MentorId,
+                StartDate = g.StartDate,
+                EndDate = g.EndDate
+            };
+
+            groupsDto.Add(groupDto);
+        }
+
+        return new ApiResponse<List<GroupDto>>(
+            HttpStatusCode.OK, "Groups retrieved successfully", groupsDto);
     }
 
-    public async Task<ApiResponse<Group?>> GetGroup(int id)
+    public async Task<ApiResponse<GroupByIdDto?>> GetGroup(int id)
     {
         if (id <= 0)
-            return new ApiResponse<Group?>(HttpStatusCode.BadRequest, "Invalid group id", null);
+            return new ApiResponse<GroupByIdDto?>(
+                HttpStatusCode.BadRequest, "Invalid group id", null);
 
         var result = await _repository.GetGroup(id);
-        return result != null
-            ? new ApiResponse<Group?>(HttpStatusCode.OK, "Group retrieved successfully", result)
-            : new ApiResponse<Group?>(HttpStatusCode.NotFound, "Group not found", null);
+
+        if (result == null)
+            return new ApiResponse<GroupByIdDto?>(
+                HttpStatusCode.NotFound, "Group not found", null);
+
+        var groupDto = new GroupByIdDto
+        {
+            Id = result.GroupId,
+            GroupName = result.GroupName,
+            CourseId = result.CourseId,
+            MentorId = result.MentorId,
+            StartDate = result.StartDate,
+            EndDate = result.EndDate
+        };
+
+        return new ApiResponse<GroupByIdDto?>(
+            HttpStatusCode.OK, "Group retrieved successfully", groupDto);
     }
 
-    public async Task<ApiResponse<bool>> AddGroup(Group group)
+    public async Task<ApiResponse<bool>> AddGroup(CreateGroupDto groupDto)
     {
+        var group = new Group
+        {
+            GroupName = groupDto.GroupName,
+            CourseId = groupDto.CourseId,
+            MentorId = groupDto.MentorId,
+            StartDate = groupDto.StartDate,
+            EndDate = groupDto.EndDate
+        };
+
         if (group == null || string.IsNullOrWhiteSpace(group.GroupName))
             return new ApiResponse<bool>(HttpStatusCode.BadRequest, "Invalid group data", false);
 
@@ -36,8 +81,17 @@ public class GroupService(IGroupRepository groupRepository) : IGroupService
         return new ApiResponse<bool>(HttpStatusCode.OK, "Group added successfully", true);
     }
 
-    public async Task<ApiResponse<bool>> UpdateGroup(int id, Group group)
+    public async Task<ApiResponse<bool>> UpdateGroup(int id, UpdateGroupDto groupDto)
     {
+        var group = new Group
+        {
+            GroupName = groupDto.GroupName,
+            CourseId = groupDto.CourseId,
+            MentorId = groupDto.MentorId,
+            StartDate = groupDto.StartDate,
+            EndDate = groupDto.EndDate
+        };
+
         if (id <= 0 || group == null || string.IsNullOrWhiteSpace(group.GroupName))
             return new ApiResponse<bool>(HttpStatusCode.BadRequest, "Invalid group data", false);
 

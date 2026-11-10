@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Application\\Application.csproj": {
+    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\mardin it\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Application\\obj\\",
+        "outputPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mardin it\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -27,8 +27,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\Domain.csproj"
+              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\Domain.csproj"
               }
             }
           }
@@ -343,14 +343,14 @@
         }
       }
     },
-    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\Domain.csproj": {
+    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\mardin it\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mardin it\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -678,14 +678,14 @@
         }
       }
     },
-    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\mardin it\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mardin it\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -701,11 +701,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Application\\Application.csproj"
+              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Application\\Application.csproj"
               },
-              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\Domain.csproj"
+              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\Domain.csproj"
               }
             }
           }
@@ -1030,14 +1030,14 @@
         }
       }
     },
-    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\mardin it\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mardin it\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1053,14 +1053,14 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Application\\Application.csproj"
+              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Application\\Application.csproj"
               },
-              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Domain\\Domain.csproj"
+              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }

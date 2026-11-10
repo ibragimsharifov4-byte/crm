@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mw8nH6RuarQ=",
+  "dgSpecHash": "//FOxKoaMFI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\day3_swagger_apiresponse\\day3_fixed\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\mardin it\\OneDrive\\Desktop\\.net projects\\week2\\crm\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mardin it\\.nuget\\packages\\dapper\\2.1.89\\dapper.2.1.89.nupkg.sha512",
     "C:\\Users\\mardin it\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0\\microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
