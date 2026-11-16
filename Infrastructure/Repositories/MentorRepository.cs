@@ -1,118 +1,50 @@
-using Infrastructure.Data;
-using Dapper;
 using Domain.Interfaces;
 using Domain.Models;
+using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
-public class MentorRepository(Database database) : IMentorRepository
+public class MentorRepository(AppDbContext appDbContext) : IMentorRepository
 {
-    private Database _data = database;
+    private AppDbContext _context = appDbContext;
 
     public async Task AddMentor(Mentor mentor)
     {
-        using var con = _data.Connection();
-        con.Open();
-        var query = @"
-        insert into mentors(fullname, email, phone, specialization)
-        values(@Fullname, @Email, @Phone, @Specialization)";
-        var result = await con.ExecuteAsync(query, mentor);
-        if (result > 0)
-        {
-            Console.WriteLine("Mentor added successfully");
-        }
-        else
-        {
-            Console.WriteLine("Failed to add mentor");
-        }
+        _context.Mentors.Add(mentor);
+        await _context.SaveChangesAsync();
     }
 
     public async Task DeleteMentor(int id)
     {
-        using var con = _data.Connection();
-        con.Open();
-        var query = "delete from mentors where mentorid = @id";
-        var result = await con.ExecuteAsync(query, new { id });
-        if (result > 0)
-        {
-            Console.WriteLine("Mentor is deleted");
-        }
-        else
-        {
-            Console.WriteLine("Mentor not found");
-        }
+        var mentor = await _context.Mentors.FirstOrDefaultAsync(x => x.MentorId == id);
+        if (mentor == null)
+            return;
+
+        _context.Mentors.Remove(mentor);
+        await _context.SaveChangesAsync();
     }
 
     public async Task<Mentor?> GetMentor(int id)
     {
-        using var con = _data.Connection();
-        con.Open();
-        var query = "select * from mentors where mentorid = @id";
-        var result = await con.QueryFirstOrDefaultAsync<Mentor>(query, new { id });
-        if (result == null)
-        {
-            Console.WriteLine("Mentor not found");
-            return null;
-        }
-        else
-        {
-            return result;
-        }
+        return await _context.Mentors.FirstOrDefaultAsync(x => x.MentorId == id);
     }
 
     public async Task<List<Mentor>> GetMentors()
     {
-        using var con = _data.Connection();
-        con.Open();
-        var query = "select * from mentors";
-        var result = await con.QueryAsync<Mentor>(query);
-        return result.ToList();
+        return await _context.Mentors.ToListAsync();
     }
 
     public async Task UpdateMentor(Mentor mentor)
     {
-        using var con = _data.Connection();
-        con.Open();
-        var query = @"
-        update mentors
-        set fullname = @Fullname,
-        email = @Email,
-        phone = @Phone,
-        specialization = @Specialization
-        where mentorid = @MentorId";
-        var result = await con.ExecuteAsync(query, mentor);
-        if (result > 0)
-        {
-            Console.WriteLine("Mentor updated successfully");
-        }
-        else
-        {
-            Console.WriteLine("Mentor not found");
-        }
-    }
+        var existing = await _context.Mentors.FirstOrDefaultAsync(x => x.MentorId == mentor.MentorId);
+        if (existing == null)
+            return;
 
-    public async Task<int> GetTotalMentorsCount()
-    {
-        using var con = _data.Connection();
-        con.Open();
-        var query = "select count(*) from mentors";
-        var result = await con.ExecuteScalarAsync<int>(query);
-        return result;
+        existing.Fullname = mentor.Fullname;
+        existing.Email = mentor.Email;
+        existing.Phone = mentor.Phone;
+        existing.Specialization = mentor.Specialization;
+        await _context.SaveChangesAsync();
     }
-
-    public async Task<List<Mentor>> GetMentorWithMostStudents()
-    {
-        using var con = _data.Connection();
-        con.Open();
-        var query = @"
-        select m.fullname, count(sg.studentid) as StudentsCount from mentors m
-        join groups g on m.mentorid = g.mentorid
-        join studentgroups sg on g.groupid = sg.groupid
-        group by m.fullname
-        order by StudentsCount desc limit 1";
-        var result = await con.QueryAsync<Mentor>(query);
-        return result.ToList();
-    }
-
-    
 }

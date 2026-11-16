@@ -1,55 +1,47 @@
-using Infrastructure.Data;
-using Dapper;
 using Domain.Interfaces;
 using Domain.Models;
+using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
-public class StudentGroupRepository(Database database) : IStudentGroupRepository
+public class StudentGroupRepository(AppDbContext appDbContext) : IStudentGroupRepository
 {
-    private Database _data = database;
+    private AppDbContext _context = appDbContext;
+
     public async Task<bool> AddStudentGroup(StudentGroup studentGroup)
     {
-        using var con = _data.Connection();
-        con.Open();
-        var query = 
-        "insert into studentgroups(studentgroupId , groupId , status) values (@studentgroupId , @groupId , @status)";
-        var res =  await con.ExecuteAsync(query , studentGroup);
+        _context.StudentGroups.Add(studentGroup);
+        var res = await _context.SaveChangesAsync();
         return res > 0;
     }
 
     public async Task<bool> DeleteStudentGroup(int id)
     {
-        using var con = _data.Connection();
-        con.Open();
-        var query = 
-        "delete from studentgroups where id = @id";
-        var res = await con.ExecuteAsync(query , new{id});
+        var studentGroup = await _context.StudentGroups.FirstOrDefaultAsync(x => x.StudentGroupId == id);
+        if (studentGroup == null)
+            return false;
+
+        _context.StudentGroups.Remove(studentGroup);
+        var res = await _context.SaveChangesAsync();
         return res > 0;
     }
 
     public async Task<List<StudentGroup>> GetStudentGroups()
     {
-        using var con = _data.Connection();
-        con.Open();
-        var query = "select * from studentgroups";
-        var studentgroups = await con.QueryAsync<StudentGroup>(query);
-        return studentgroups.ToList();
+        return await _context.StudentGroups.ToListAsync();
     }
 
     public async Task<bool> UpdateStudentGroup(StudentGroup studentGroup)
     {
-        using var con = _data.Connection();
-        con.Open();
-        var query = @"
-        update studentgroups set 
-        studentgroupId = @studentgroupId,
-        studentId = @studentId,
-        groupId = @groupId,
-        status = @status
-        where id = @id";
-        var res = await con.ExecuteAsync(query , studentGroup);
+        var existing = await _context.StudentGroups.FirstOrDefaultAsync(x => x.StudentGroupId == studentGroup.StudentGroupId);
+        if (existing == null)
+            return false;
+
+        existing.StudentId = studentGroup.StudentId;
+        existing.GroupId = studentGroup.GroupId;
+        existing.Status = studentGroup.Status;
+        var res = await _context.SaveChangesAsync();
         return res > 0;
     }
-
 }

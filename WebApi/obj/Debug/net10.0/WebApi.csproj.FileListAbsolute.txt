@@ -87,3 +87,7 @@ C:\Users\mardin it\OneDrive\Desktop\.net projects\week2\crm\WebApi\obj\Debug\net
 C:\Users\mardin it\OneDrive\Desktop\.net projects\week2\crm\WebApi\obj\Debug\net10.0\WebApi.pdb
 C:\Users\mardin it\OneDrive\Desktop\.net projects\week2\crm\WebApi\obj\Debug\net10.0\WebApi.genruntimeconfig.cache
 C:\Users\mardin it\OneDrive\Desktop\.net projects\week2\crm\WebApi\obj\Debug\net10.0\ref\WebApi.dll
+C:\Users\mardin it\OneDrive\Desktop\.net projects\week2\crm\WebApi\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\mardin it\OneDrive\Desktop\.net projects\week2\crm\WebApi\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\mardin it\OneDrive\Desktop\.net projects\week2\crm\WebApi\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\mardin it\OneDrive\Desktop\.net projects\week2\crm\WebApi\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
