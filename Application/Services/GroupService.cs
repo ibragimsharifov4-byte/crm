@@ -15,9 +15,7 @@ public class GroupService(IGroupRepository groupRepository) : IGroupService
     public async Task<ApiResponse<List<GroupDto>>> GetGroups()
     {
         var result = await _repository.GetGroups();
-
         var groupsDto = new List<GroupDto>();
-
         foreach (var g in result)
         {
             var groupDto = new GroupDto
@@ -29,10 +27,8 @@ public class GroupService(IGroupRepository groupRepository) : IGroupService
                 StartDate = g.StartDate,
                 EndDate = g.EndDate
             };
-
             groupsDto.Add(groupDto);
         }
-
         return new ApiResponse<List<GroupDto>>(
             HttpStatusCode.OK, "Groups retrieved successfully", groupsDto);
     }
@@ -68,8 +64,8 @@ public class GroupService(IGroupRepository groupRepository) : IGroupService
         var group = new Group
         {
             GroupName = groupDto.GroupName,
-            CourseId = groupDto.CourseId,
             MentorId = groupDto.MentorId,
+            CourseId = groupDto.CourseId,
             StartDate = groupDto.StartDate,
             EndDate = groupDto.EndDate
         };
@@ -86,8 +82,8 @@ public class GroupService(IGroupRepository groupRepository) : IGroupService
         var group = new Group
         {
             GroupName = groupDto.GroupName,
-            CourseId = groupDto.CourseId,
             MentorId = groupDto.MentorId,
+            CourseId = groupDto.CourseId,
             StartDate = groupDto.StartDate,
             EndDate = groupDto.EndDate
         };

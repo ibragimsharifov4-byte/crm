@@ -1,3 +1,5 @@
+using Domain.Models;
+
 namespace Application.DTOs.GroupDtos;
 
 public class GroupDto

@@ -6,4 +6,5 @@ public class Course
     public string Title { get; set; } = null!;
     public string Description { get; set; } = null!;
     public DateTime Durationweek { get; set; }
+    public List<Group> Groups {get; set;} = new();
 }

@@ -1,3 +1,5 @@
+using Domain.Models;
+
 namespace Application.DTOs.GroupByIdDtos;
 
 public class GroupByIdDto

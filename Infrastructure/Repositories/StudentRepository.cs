@@ -32,7 +32,7 @@ public class StudentRepository(AppDbContext appDbContext) : IStudentRepository
 
     public async Task<List<Student>> GetStudents()
     {
-        return await _context.Students.ToListAsync();
+        return await _context.Students.Include(e => e.StudentGroups).ToListAsync();
     }
 
     public async Task UpdateStudent(Student student)

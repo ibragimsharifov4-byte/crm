@@ -32,7 +32,7 @@ public class MentorRepository(AppDbContext appDbContext) : IMentorRepository
 
     public async Task<List<Mentor>> GetMentors()
     {
-        return await _context.Mentors.ToListAsync();
+        return await _context.Mentors.Include(e => e.Groups).ToListAsync();
     }
 
     public async Task UpdateMentor(Mentor mentor)

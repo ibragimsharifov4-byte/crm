@@ -32,7 +32,7 @@ public class CourseRepository(AppDbContext appDbContext) : ICourseRepository
 
     public async Task<List<Course>> GetCourses()
     {
-        return await _context.Courses.ToListAsync();
+        return await _context.Courses.Include(e => e.Groups).ToListAsync();
     }
 
     public async Task UpdateCourse(Course course)

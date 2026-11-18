@@ -32,7 +32,8 @@ public class GroupRepository(AppDbContext appDbContext) : IGroupRepository
 
     public async Task<List<Group>> GetGroups()
     {
-        return await _context.Groups.ToListAsync();
+        var groups = await _context.Groups.Include(e => e.Course).Include(e => e.Mentor).ToListAsync();
+        return groups;
     }
 
     public async Task UpdateGroup(Group group)

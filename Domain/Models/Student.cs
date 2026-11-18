@@ -7,4 +7,5 @@ public class Student
     public string Email { get; set; } = null!;
     public string Phone { get; set; } = null!;
     public DateTime Enrollmentdate { get; set; }
+    public List<StudentGroup> StudentGroups { get; set; } = new();
 }
